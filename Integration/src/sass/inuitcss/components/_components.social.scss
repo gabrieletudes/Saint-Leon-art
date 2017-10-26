@@ -1,0 +1,31 @@
+.c-social-nav{
+  width: rem(208px);
+}
+@include mq($from: desktop){
+  .c-social-nav--hidde{
+    display: none;
+  }
+}
+@include mq($from: mobile, $until: desktop){
+  .c-social-nav--hidde-m{
+    display: none;
+  }
+}
+
+.c-social-icon{
+  font-family: 'fontawesome';
+  font-size: rem(24px);
+  color: $color-yellow;
+  &--fab:before{
+    content: "";
+  }
+  &--twtr:before{
+    content: "";
+  }
+  &--inst:before{
+    content: "";
+  }
+  &--mail:before{
+    content: "";
+  }
+}
