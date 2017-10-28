@@ -1,0 +1,21 @@
+.c-event{
+  &__date{
+    border-right: 2px solid lighten($color-orange,20%);
+  }
+}
+.c-event-promo{
+    border: 2px solid $color-purple;
+    width: rem(300px);
+    &__adress{
+      border-bottom: 2px solid $color-purple;
+      margin:rem(6px) 0;
+      padding-bottom: rem(6px);
+      @include inuit-font-size(24px);
+    }
+    &__date{
+
+    }
+    &__hour{
+
+    }
+}
