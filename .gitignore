@@ -8,4 +8,7 @@ schema.sketch
 st-leonart/*
 st-leonart/wp-content/*
 st-leonart/wp-content/themes/*
-!st-leonart/wp-content/themes/stleonarttheme/*
+!st-leonart/wp-content/themes/stleonarttheme/
+st-leonart/wp-content/themes/stleonarttheme/assets
+st-leonart/wp-content/themes/stleonarttheme/node_modules
+st-leonart/wp-content/themes/stleonarttheme/backupmenu.php
