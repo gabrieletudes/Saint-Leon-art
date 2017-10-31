@@ -12,3 +12,5 @@ st-leonart/wp-content/themes/*
 !st-leonart/wp-content/themes/stleonarttheme/
 st-leonart/wp-content/themes/stleonarttheme/assets/
 st-leonart/wp-content/themes/stleonarttheme/node_modules/
+_backupcomponents.header.scss
+backupmenu.php
