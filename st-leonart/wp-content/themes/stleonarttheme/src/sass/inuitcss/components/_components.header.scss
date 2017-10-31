@@ -1,7 +1,10 @@
 .c-header{
   position: fixed;
   width: 100%;
-  height: 100%;
+  @include mq($from: desktop){
+  height: 100px;
+  }
+  z-index: 2;
   top:0;
   transition: all .3s ease-in-out;
   &__wrapper{
@@ -62,9 +65,10 @@
       top: rem(40px);
       left: 0;
       right: 0;
+      bottom: 0;
       margin-left: auto;
       margin-right: auto;
-      width: rem(1360px);
+      width: rem(1440px);
       padding: rem(6px) rem(12px);
     }
   }
@@ -99,21 +103,22 @@
 
 .site-pusher{
   left: 0;
-  z-index: -2;
   position: relative;
   transition: all .3s ease-in-out;
 }
 .site-cache {
   transition: all .3s ease-in-out;
 }
-@include mq($from: mobile, $until: desktop) {
+@include mq( $until: desktop) {
   #sidebartoggler{
     &:checked + .c-header{
+      height: 100%;
       .c-header__nav{
         left: 0;
       }
       + .site-pusher{
         left: 66.5%;
+        z-index: -2;
         overflow-x: hidden;
         .site-cache {
           position: absolute;
