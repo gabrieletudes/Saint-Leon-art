@@ -1,1 +1,11 @@
+Arendre
+others
+.DS_Store
+Moodboard.sketch
+schema.sketch
 
+# ignore everything in the root except the "wp-content" directory.
+st-leonart/*
+st-leonart/wp-content/*
+st-leonart/wp-content/themes/*
+!st-leonart/wp-content/themes/stleonarttheme/*
