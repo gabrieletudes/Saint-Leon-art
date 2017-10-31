@@ -3,6 +3,6 @@ others
 .DS_Store
 Moodboard.sketch
 schema.sketch
-st-leaonart/*
-st-leaonart/wp-content/themes/*
-!st-leaonart/wp-content/themes/stleonarttheme/*
+st-leonart/*
+st-leonart/wp-content/themes/*
+!st-leonart/wp-content/themes/stleonarttheme/*
