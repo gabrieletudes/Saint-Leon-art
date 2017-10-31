@@ -1,11 +1,13 @@
 .c-event{
+  max-width: rem(420px);
   &__date{
     border-right: 2px solid lighten($color-orange,20%);
   }
 }
 .c-event-promo{
     border: 2px solid $color-purple;
-    width: rem(300px);
+    max-width: rem(340px);
+    color: $color-purple;
     &__adress{
       border-bottom: 2px solid $color-purple;
       margin:rem(6px) 0;
@@ -13,9 +15,12 @@
       @include inuit-font-size(24px);
     }
     &__date{
-
+      @include inuit-font-size(18px);
+      font-weight: bold;
     }
     &__hour{
-
+      @include inuit-font-size(18px);
+      font-weight: bold;
+      margin-left: auto;
     }
 }
