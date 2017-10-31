@@ -1,5 +1,5 @@
 node_modules
-assets
+assets/*
 backupmenu.php
 .DS_Store
 _backupcomponents.header.scss
