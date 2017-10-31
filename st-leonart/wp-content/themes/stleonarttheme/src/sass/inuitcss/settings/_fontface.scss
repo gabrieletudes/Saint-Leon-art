@@ -1,8 +1,8 @@
 //-Roboto Slab
 @font-face {
     font-family: 'roboto-slab';
-    src: url($fontPath.'robotoslab-bold-webfont.woff2') format('woff2'),
-         url($fontPath.'robotoslab-bold-webfont.woff') format('woff');
+    src: url('#{ $fontPath }robotoslab/robotoslab-bold-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }robotoslab/robotoslab-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 
@@ -10,8 +10,8 @@
 
 @font-face {
     font-family: 'roboto-slab';
-    src: url('robotoslab-regular-webfont.woff2') format('woff2'),
-         url('robotoslab-regular-webfont.woff') format('woff');
+    src: url('#{ $fontPath }robotoslab/robotoslab-regular-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }robotoslab/robotoslab-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -20,8 +20,8 @@
 //-firasans
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-bold-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-bold-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-bold-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 
@@ -29,8 +29,8 @@
 
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-bolditalic-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-bolditalic-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-bolditalic-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-bolditalic-webfont.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 
@@ -38,8 +38,8 @@
 
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-italic-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-italic-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-italic-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 
@@ -47,8 +47,8 @@
 
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-light-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-light-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-light-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-light-webfont.woff') format('woff');
     font-weight: lighter;
     font-style: normal;
 
@@ -56,8 +56,8 @@
 
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-lightitalic-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-lightitalic-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-lightitalic-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-lightitalic-webfont.woff') format('woff');
     font-weight: lighter;
     font-style: italic;
 
@@ -65,8 +65,8 @@
 
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-medium-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-medium-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-medium-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-medium-webfont.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 
@@ -74,8 +74,8 @@
 
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-mediumitalic-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-mediumitalic-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-mediumitalic-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-mediumitalic-webfont.woff') format('woff');
     font-weight: 500;
     font-style: italic;
 
@@ -83,8 +83,8 @@
 
 @font-face {
     font-family: 'firasans';
-    src: url($fontPath.'firasans-regular-webfont.woff2') format('woff2'),
-         url($fontPath.'firasans-regular-webfont.woff') format('woff');
+    src: url('#{ $fontPath }firasans/firasans-regular-webfont.woff2') format('woff2'),
+         url('#{ $fontPath }firasans/firasans-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
