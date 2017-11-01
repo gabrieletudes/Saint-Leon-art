@@ -2,6 +2,7 @@
 Arendre
 Moodboard.sketch
 schema.sketch
+<<<<<<< HEAD
 
 st-leonart/*
 !st-leonart/wp-content/
@@ -13,3 +14,8 @@ st-leonart/wp-content/themes/stleonarttheme/assets/
 st-leonart/wp-content/themes/stleonarttheme/node_modules/
 _backupcomponents.header.scss
 backupmenu.php
+=======
+st-leaonart/*
+st-leaonart/wp-content/themes/*
+!st-leaonart/wp-content/themes/stleonarttheme/*
+>>>>>>> 00debbc07b183adb707057c0e7160873ca3b2adc
