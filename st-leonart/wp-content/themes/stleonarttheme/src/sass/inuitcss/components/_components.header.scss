@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   @include mq($from: desktop){
-  height: 100px;
+    height: 100px;
   }
   z-index: 2;
   top:0;
@@ -20,9 +20,17 @@
       height: 40px;
     }
     &__icon:after{
-      content: '☰';
       font-size: 32px;
       color: white;
+      font-family: 'ionicons';
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    &__icon--menu:after{
+      content: '';
+    }
+    &__icon--search:after{
+      content: '';
     }
     &__nav-item{
       padding-left: 24px;
@@ -32,18 +40,40 @@
       max-width: 100%;
     }
     &__nav-item:before {
-      content: "";
       margin-right: 2rem;
       color: rgba(255, 255, 255, 0.34);
       font-family: 'ionicons';
       font-size: 1.5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    &__nav-item--home:before {
+      content: "";
+    }
+    &__nav-item--agenda:before {
+      content: "";
+    }
+    &__nav-item--about:before {
+      content: "";
+    }
+    &__nav-item--artists:before {
+      content: "";
+    }
+    &__nav-item--news:before {
+      content: "";
+    }
+    &__nav-item--handy:before {
+      content: "";
+    }
+    &__nav-item--contact:before {
+      content: "";
     }
     &__nav{
       position: absolute;
-      background-color: desaturate(lighten($color-purple, 15%),25%);
+      background-color: $color-purple-light-20;
       color: white;
       top: 3.44rem;
-      left: -66.6%;
+      left: -66.66667%;
       bottom: 0;
       height: 100vh;
       transition: all .3s ease-in-out;
@@ -56,7 +86,7 @@
   @include mq($from: desktop) {
     &__wrapper{
       padding-bottom: 24px;
-      background-color: desaturate(lighten($color-purple, 20%),25%);
+      background-color: $color-purple-light-20;
     }
     &__nav{
       background-color: $color-purple;
@@ -78,8 +108,28 @@
   }
   &__back{
     background-color: #e08f89;
-    min-height: 232px;
-    margin-top: 55px;
+    min-height: 312px;
+    margin-top: 54px;
+    background: linear-gradient(0deg,rgba($color-orange,0.6),rgba($color-orange,0.6)), url('#{$imgPath}home-bcg.jpg') center center;
+    background-size: cover;
+    transition: all .3s ease-in-out;
+    @include mq($from: tablet, $until: desktop){
+      margin-top: 54px;
+    }
+    @include mq($from: desktop){
+      min-height: 400px;
+      margin-top: 65px;
+    }
+  }
+  &__title{
+    background-color: rgba($color-yellow, 0.65);
+  }
+  &__sub-title{
+    background-color: rgba($color-yellow, 0.75);
+    color: $color-purple;
+  }
+  &__title--small {
+    font-size: 1rem;
   }
 }
 
@@ -117,7 +167,7 @@
         left: 0;
       }
       + .site-pusher{
-        left: 66.5%;
+        left: 66.66667%;
         z-index: -2;
         overflow-x: hidden;
         .site-cache {
@@ -128,6 +178,15 @@
           left: 0;
           right: 0;
         }
+      }
+    }
+  }
+}
+@include mq( $from: tablet, $until: desktop) {
+  #sidebartoggler{
+    &:checked + .c-header{
+      + .site-pusher{
+        left: 33.31333%;;
       }
     }
   }
