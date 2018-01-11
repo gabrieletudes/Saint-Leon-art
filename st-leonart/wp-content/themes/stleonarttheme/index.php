@@ -1,3 +1,4 @@
+<?php include('partials/header.php')?>
       <div class="o-content-wrapper o-content-wrapper--max o-flex o-flex--wrap">
         <div class="c-expointro u-padding-vertical-large u-1/2@desktop">
           <h2 class="u-my-420">EXPOSITION DE L’ARTISTE MUSSELMAN</h2>
