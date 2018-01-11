@@ -26,3 +26,11 @@
       margin-left: auto;
     }
 }
+.c-event-last{
+  &__data{
+    color: $color-black-light-46;
+  }
+  &__desc{
+    @include inuit-font-size(32px);
+  }
+}
