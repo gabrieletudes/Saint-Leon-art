@@ -22,7 +22,7 @@
    gulp.task('serve', ['css'], function() {
 
         browserSync.init({
-            proxy:'leonart.app',
+            proxy:'leonart.test',
         });
 
 });
@@ -31,7 +31,7 @@
 gulp.task( "images", function(){
     gulp.src( "src/img/**" )
         .pipe( image() )
-        .pipe( gulp.dest( "assets/img" ) )
+        .pipe( gulp.dest( "assets/img" ) );
 } );
 // --- Task for styles
 gulp.task( "css", function(){
@@ -63,7 +63,7 @@ gulp.task( "js", function(){
 } );
 // --- Watch tasks
 gulp.task( "watch", function(){
-    gulp.watch( "src/images/**", [ "images" ] );
+    gulp.watch( "src/img/**", [ "images" ] );
     gulp.watch( "src/fonts/**", [ "font" ] );
     gulp.watch( "src/sass/**/*.scss", [ "css" ] );
     //gulp.watch( 'src/sass/**/*.scss').on('change',browserSync.reload)
