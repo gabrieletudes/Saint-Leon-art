@@ -17,15 +17,16 @@
  */
 
 .c-btn {
-  display: inline-block; /* [1] */
-  vertical-align: middle; /* [2] */
+  //display: inline-block; /* [1] */
+  //vertical-align: middle; /* [2] */
   font: inherit; /* [3] */
   text-align: center; /* [4] */
   margin: 0; /* [4] */
   cursor: pointer; /* [5] */
   padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
   transition: $global-transition;
-  border-radius: $global-radius;
+  border-radius: 0;
+  border: none;
 }
 
 
@@ -36,21 +37,33 @@
    ========================================================================== */
 
 .c-btn--primary {
-  background-color: #4a8ec2;
+  background-color: $color-white;
+  border: 1px solid $color-purple;
 
   &,
   &:hover,
   &:active,
   &:focus {
     text-decoration: none; /* [4] */
-    color: #fff;
+    color: $color-purple;
   }
 
   &:hover,
   &:focus {
-    background-color: #3774a2;
+    background-color: $color-purple;
+    color: $color-white;
+    border: 1px solid rgba(0,0,0,0);
   }
 
+}
+
+.c-btn--submit{
+  &::after {
+  content: '';
+  font-family: 'ionicons';
+  font-size: 24px;
+  margin-left: $inuit-global-spacing-unit-tiny;
+}
 }
 
 .c-btn--secondary {
