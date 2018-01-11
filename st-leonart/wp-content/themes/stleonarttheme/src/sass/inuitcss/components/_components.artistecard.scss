@@ -1,4 +1,17 @@
 .c-artistcard{
   flex: 0 0 50%;
   max-width: rem(224px);
+  &__name {
+    @include mq($until:mobile-4){
+      @include inuit-font-size(13px);
+    }
+    color: $color-purple;
+    font-weight: 500;
+  }
+  &__ability {
+    @include mq($until:mobile-4){
+      @include inuit-font-size(13px);
+    }
+    color: #757575;
+  }
 }
