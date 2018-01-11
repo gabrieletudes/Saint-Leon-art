@@ -88,6 +88,11 @@
 @import "tools/tools.clearfix";
 @import "tools/tools.hidden";
 @import "./node_modules/sass-mq/mq";
+//Add between breaktpoints values
+$mq-breakpoints: map-merge(
+    $mq-breakpoints,
+    (mobile-4: 400px,)
+);
 //allows me to convert px to rem;
 @import "tools/rem";
 
