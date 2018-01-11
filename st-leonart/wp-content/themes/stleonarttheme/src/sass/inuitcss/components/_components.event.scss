@@ -1,7 +1,9 @@
 .c-event{
-  max-width: rem(420px);
+  max-width: rem(360px) !important;
   &__date{
     border-right: 2px solid lighten($color-orange,20%);
+    line-height: 1.2;
+  }
   &__date-day{
     @include inuit-font-size(30px);
   }
