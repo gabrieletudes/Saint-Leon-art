@@ -145,7 +145,17 @@ $inuit-wrapper-width: 1440px;
 @import "components/components.headings";
 //Artistcard styling
 @import "components/components.artistecard";
-
+@import "components/components.insta";
+//Background colors
+@import "components/components.background-colors";
+//Newsletter styling
+@import "components/components.newsletter";
+//Footer styling
+@import "components/components.footer";
+//Navigation selection styling
+@import "components/components.nav-event";
+//Partners section styling
+@import "components/components.partner";
 
 // UTILITIES
 @import "utilities/utilities.clearfix";
