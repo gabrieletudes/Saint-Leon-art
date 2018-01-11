@@ -34,3 +34,11 @@
     @include inuit-font-size(32px);
   }
 }
+.c-event-type{
+  font-family: 'roboto-slab',serif;
+  color: $color-purple;
+  background-color: $color-white;
+  border: none;
+  border-radius: 0;
+
+}
