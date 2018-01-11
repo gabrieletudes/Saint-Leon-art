@@ -176,3 +176,4 @@
         </a>
       </div><!--END Partners section-->
       <div class="site-cache" id="site-cache"></div>
+      <?php include('partials/footer.php')?>
