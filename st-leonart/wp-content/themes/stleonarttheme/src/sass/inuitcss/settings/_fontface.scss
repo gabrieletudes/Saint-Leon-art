@@ -1,3 +1,22 @@
+//- Ionicons
+@font-face {
+ font-family: 'ionicons';
+ src:url("#{$fontPath}ionicons/ionicons.eot");
+ src:url("#{$fontPath}ionicons/ionicons.eot#iefix") format("embedded-opentype"),
+  url("#{$fontPath}ionicons/ionicons.ttf") format("truetype"),
+  url("#{$fontPath}ionicons/ionicons.woff") format("woff"),
+  url("#{$fontPath}ionicons/ionicons.svg#Ionicons") format("svg");
+ speak: none;
+ font-weight: normal;
+ font-style: normal;
+ font-variant: normal;
+ text-transform: none;
+ text-rendering: auto;
+ line-height: 1;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
+
 //-Roboto Slab
 @font-face {
     font-family: 'roboto-slab';
