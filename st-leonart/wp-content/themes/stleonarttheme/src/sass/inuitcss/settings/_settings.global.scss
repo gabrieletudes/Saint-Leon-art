@@ -8,10 +8,25 @@
 $global-radius: 3px !default;
 $global-transition: all 300ms ease-in-out !default;
 
+// Function to create the shade of a given color
+@import "../tools/tools.colorful";
 // My colors
 $color-orange: #CA4339;
 $color-black: #000000;
 $color-yellow: #F8C978;
 $color-white: #FFFFFF;
 $color-purple: #6B1C3F;
-$color-light-purple: #8F5D73;
+//Tints
+//Color Black
+$color-black-light-46: tinte($color-black,46%);
+//Color Purple
+$color-purple-light-05: tinte($color-purple,5%);
+$color-purple-light-10: tinte($color-purple,10%);
+$color-purple-light-15: tinte($color-purple,20%);
+$color-purple-light-20: tinte($color-purple,20%);
+$color-purple-light-40: tinte($color-purple,40%);
+//Shades
+//Color Purple
+$color-purple-dark-10: shade($color-purple,10%);
+$color-purple-dark-20: shade($color-purple,20%);
+$color-purple-dark-40: shade($color-purple,40%);
