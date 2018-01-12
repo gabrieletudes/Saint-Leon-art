@@ -1,0 +1,39 @@
+.c-bg-color{
+  &--purple{
+    background-color: $color-purple;
+    color: white;
+  }
+  &--purple-light-05{
+    background-color: $color-purple-light-05;
+    color: white;
+  }
+  &--purple-light-10{
+    background-color: $color-purple-light-10;
+    color: white;
+  }
+  &--purple-light-15{
+    background-color: $color-purple-light-15;
+    color: white;
+  }
+  &--purple-light-20{
+    background-color: $color-purple-light-20;
+    color: white;
+  }
+  &--purple-light-40{
+    background-color: $color-purple-light-40;
+    color: white;
+  }
+  &--purple-dark-10{
+    background-color: $color-purple-dark-10;
+    color: white;
+  }
+  &--purple-dark-40{
+    background-color: $color-purple-dark-40;
+    color: white;
+  }
+  &--shadow-white{
+    background-color: white;
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+}
