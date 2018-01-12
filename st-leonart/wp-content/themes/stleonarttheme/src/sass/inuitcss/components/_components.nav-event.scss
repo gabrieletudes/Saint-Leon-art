@@ -1,0 +1,43 @@
+.c-nav-event{
+  list-style: none;
+  overflow: visible;
+  position: relative;
+  &__li{
+    cursor: pointer;
+  }
+  &__li:hover &__drop-menu, &__li:focus &__drop-menu{
+    opacity: 0.99;
+    left: auto;
+  }
+  &__drop-menu li{
+    list-style: none;
+  }
+  &__drop-menu li a:hover, &__drop-menu li a:focus{
+    background-color: $color-purple-light-20;
+  }
+  &__drop-menu{
+    display: flex;
+    opacity: 0;
+    left: -9999px;
+    max-width: 12rem;
+    padding-top: 4px;
+    position: absolute;
+    top: 35px;
+    z-index: 20;
+    background-color: $color-purple-light-10;
+    flex-wrap: wrap;
+  }
+  &__li:hover &__drop-menu--right, &__li:focus &__drop-menu--right{
+    right: -12px;
+  }
+  &__li:hover &__drop-menu--left, &__li:focus &__drop-menu--left{
+    left: -12px;
+  }
+  &__option{
+    &--icon-down:after{
+      margin-left: $inuit-global-spacing-unit-tiny;
+      font-family: 'ionicons';
+      content: '';
+    }
+  }
+}
