@@ -17,23 +17,23 @@
       <div class="o-content-wrapper c-bg-color--purple-light-20 o-flex o-flex--wrap u-padding-vertical-large c-bg-color--purple-light-40">
         <div class="o-flex u-padding-vertical-large o-flex--wrap u-1/1 u-padding-horizontal c-bg-color--shadow-white">
           <h3 class="c-h--yellow o-flex u-1/1@mobile">Nos artistes vedette</h3>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/220/220" alt="there is not image yet">
+          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
+            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
             <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
             <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
           </a>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/220/220" alt="there is not image yet">
+          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
+            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
             <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
             <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
           </a>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/220/220" alt="there is not image yet">
+          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
+            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
             <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
             <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
           </a>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/220/220" alt="there is not image yet">
+          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
+            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
             <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
             <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
           </a>
