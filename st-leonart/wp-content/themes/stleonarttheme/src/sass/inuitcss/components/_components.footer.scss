@@ -1,0 +1,12 @@
+.c-footer{
+  &__icon--heart::after{
+    content:'';
+    font-family: 'ionicons';
+    margin: 0 $inuit-global-spacing-unit-tiny;
+    //font-size: 24px;
+    color:$color-orange;
+  }
+  &__maker-link{
+    color: $color-yellow;
+  }
+}
