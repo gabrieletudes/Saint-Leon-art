@@ -7,7 +7,16 @@
   &__date-day{
     @include inuit-font-size(30px);
   }
+  &__hour{
+    color: $color-black-light-46;
+  }
+  &__label{
+    background-color: $color-orange;
+    color:$color-white;
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
 }
+
 .c-event-promo{
     border: 2px solid $color-purple;
     max-width: rem(340px);
