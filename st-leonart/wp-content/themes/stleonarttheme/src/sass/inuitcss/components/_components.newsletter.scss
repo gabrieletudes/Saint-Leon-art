@@ -1,0 +1,15 @@
+.c-newsletter{
+  border-top: 20px solid pink;
+  border-image-source: url('#{ $imgPath }border.svg');
+  border-image-slice: 22;
+  border-image-width: 22px 0 0 0;
+  border-image-repeat: round;
+  &-form{
+    display: flex;
+  }
+  &-form__input{
+    min-width: rem(220px);
+    padding: $inuit-global-spacing-unit-tiny;
+    border: 1px solid $color-purple;
+  }
+}
