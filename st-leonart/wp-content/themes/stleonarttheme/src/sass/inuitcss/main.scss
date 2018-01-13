@@ -141,6 +141,8 @@ $inuit-wrapper-width: 1440px;
 @import "components/components.header";
 @import "components/components.event";
 @import "components/components.social";
+//Links styling
+@import "components/components.links";
 //heading styling
 @import "components/components.headings";
 //Artistcard styling
@@ -156,6 +158,8 @@ $inuit-wrapper-width: 1440px;
 @import "components/components.nav-event";
 //Partners section styling
 @import "components/components.partner";
+//Article styling
+@import "components/components.articles";
 
 // UTILITIES
 @import "utilities/utilities.clearfix";
