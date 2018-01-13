@@ -1,0 +1,67 @@
+.c-link {
+    display: flex;
+    align-items: center;
+    line-height: 0.9;
+}
+
+.c-link--back {
+  &:hover,
+  &:focus {
+    &::before {
+      margin-left: 0;
+      margin-right: $inuit-global-spacing-unit-small;
+    }
+  }
+  &::before {
+    content: '\f3cf';
+    font-family: 'ionicons';
+    font-size: 24px;
+    transition: $global-transition;
+    margin: 0 $inuit-global-spacing-unit-tiny;
+    border-bottom: 0;
+  }
+}
+
+.c-link--forward {
+  &:hover,
+  &:focus {
+    &::after {
+      margin-left: $inuit-global-spacing-unit-small;
+      margin-right: 0;
+    }
+  }
+
+  &::after {
+    content: '\f3d1';
+    font-family: 'ionicons';
+    font-size: 24px;
+    transition: $global-transition;
+    margin: 0 $inuit-global-spacing-unit-tiny;
+    border-bottom: 0;
+  }
+}
+
+//styles
+.c-link--yellow {
+  color: $color-yellow;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-yellow-dark-10;
+  }
+}
+
+.c-link--purple {
+  color: $color-black-light-46;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-purple-dark-10;
+  }
+}
+
+.c-link--upper{
+    text-transform: uppercase;
+}
