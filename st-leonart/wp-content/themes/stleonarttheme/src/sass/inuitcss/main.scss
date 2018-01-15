@@ -148,6 +148,8 @@ $inuit-wrapper-width: 1440px;
 //Artistcard styling
 @import "components/components.artistecard";
 @import "components/components.insta";
+//Contact page
+@import "components/components.contact";
 //Background colors
 @import "components/components.background-colors";
 //Newsletter styling
@@ -160,13 +162,14 @@ $inuit-wrapper-width: 1440px;
 @import "components/components.partner";
 //Article styling
 @import "components/components.articles";
+//Practical styling
+@import "components/components.practical";
+//Animations
+@import "components/components.animations";
 
 // UTILITIES
 @import "utilities/utilities.clearfix";
 
-object{
-  width: 100%;
-}
 
 $inuit-offsets: true;
 $inuit-fractions: 1 2 3 4 12;
