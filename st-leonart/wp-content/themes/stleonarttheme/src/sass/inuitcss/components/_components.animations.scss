@@ -1,0 +1,9 @@
+.c-anime{
+  &--hover-up{
+    transition: $global-transition;
+    &:hover,&:focus{
+      transform: translateY(-4px);
+      box-shadow: rem(0px 9px 15px 0 rgba(0, 0, 0, 0.1));
+    }
+  }
+}
