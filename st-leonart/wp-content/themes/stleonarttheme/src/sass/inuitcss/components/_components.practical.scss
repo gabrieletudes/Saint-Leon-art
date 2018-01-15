@@ -1,0 +1,21 @@
+.c-practical{
+  &__sub-title{
+    font-family: 'firasans';
+    font-weight: bold;
+  }
+}
+
+.c-practical-icon{
+  &:before{
+    font-family: 'ionicons';
+    font-size: rem(24px);
+    color: $color-purple;
+    margin-right: $inuit-global-spacing-unit-small;
+  }
+  &--bus:before{
+    content: "\f36d";
+  }
+  &--location:before{
+    content: "\f36f";
+  }
+}
