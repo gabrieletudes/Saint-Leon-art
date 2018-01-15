@@ -36,13 +36,13 @@
         </div>
         <nav class="c-header__nav titi o-flex o-flex__item u-2/3@mobile u-4/12@tablet u-11/12@desktop o-flex--lock-top-left o-flex--wrap">
           <a href="#" class="o-block o-flex c-header__nav-logo u-margin-right-small"><img class="u-padding-tiny" src="assets/img/logo.svg" alt="Logo" width="62" height="49"></a>
-          <a class="c-header__nav-item c-header__nav-item--home o-flex__item u-margin-right" href="index.php">Accueil</a>
-          <a class="c-header__nav-item c-header__nav-item--agenda o-flex__item u-margin-right" href="programme.php">Programme</a>
-          <a class="c-header__nav-item c-header__nav-item--about o-flex__item u-margin-right" href="apropos.php">Saint Leon'art</a>
-          <a class="c-header__nav-item c-header__nav-item--artists o-flex__item u-margin-right" href="#">Artistes</a>
-          <a class="c-header__nav-item c-header__nav-item--news o-flex__item u-margin-right" href="#">Articles</a>
-          <a class="c-header__nav-item c-header__nav-item--handy o-flex__item u-margin-right" href="#">Pratique</a>
-          <a class="c-header__nav-item c-header__nav-item--contact o-flex__item u-margin-right" href="#">Contact</a>
+          <a class="c-header__nav-item c-header__nav-item--home o-flex__item u-margin-right" href="index.php" data-hover="Accueil">Accueil</a>
+          <a class="c-header__nav-item c-header__nav-item--agenda o-flex__item u-margin-right" href="programme.php" data-hover="Programme">Programme</a>
+          <a class="c-header__nav-item c-header__nav-item--about o-flex__item u-margin-right" href="about.php" data-hover="Saint&nbsp;Leon'art">Saint&nbsp;Leon'art</a>
+          <a class="c-header__nav-item c-header__nav-item--artists o-flex__item u-margin-right" href="artistes.php" data-hover="Artistes">Artistes</a>
+          <a class="c-header__nav-item c-header__nav-item--news o-flex__item u-margin-right" href="#" data-hover="Articles">Articles</a>
+          <a class="c-header__nav-item c-header__nav-item--handy o-flex__item u-margin-right" href="#" data-hover="Pratique">Pratique</a>
+          <a class="c-header__nav-item c-header__nav-item--contact o-flex__item u-margin-right" href="#" data-hover="Contact">Contact</a>
           <div class="o-flex o-flex--wrap c-social-nav u-margin-top-large u-padding-left c-social-nav--hidde">
             <a class="c-social-nav__item u-1/4  o-flex__item" href="#">
               <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--fab" aria-hidden="true">
