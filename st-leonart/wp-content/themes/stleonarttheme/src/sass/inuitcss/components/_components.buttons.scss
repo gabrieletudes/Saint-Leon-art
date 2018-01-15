@@ -37,7 +37,7 @@
    ========================================================================== */
 
 .c-btn--primary {
-  background-color: $color-white;
+  background-color: $color-purple;
   border: 1px solid $color-purple;
 
   &,
@@ -45,12 +45,12 @@
   &:active,
   &:focus {
     text-decoration: none; /* [4] */
-    color: $color-purple;
+    color: $color-white;
   }
 
   &:hover,
   &:focus {
-    background-color: $color-purple;
+    background-color: $color-purple-dark-20;
     color: $color-white;
     border: 1px solid rgba(0,0,0,0);
   }
