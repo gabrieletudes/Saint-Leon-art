@@ -1,0 +1,101 @@
+.o-content-wrapper{
+  margin: 0 auto;
+  @include mq( $from: mobile, $until: tablet){
+    padding: 0 $inuit-global-spacing-unit-small;
+  }
+  @include mq($from: tablet, $until: desktop){
+    padding: 0 $inuit-global-spacing-unit-large;
+  }
+  @include mq($from: desktop){
+    padding: 0 $inuit-global-spacing-unit-huge;
+  }
+  &--padding-right{
+    @include mq( $from: mobile, $until: tablet){
+      padding: 0 $inuit-global-spacing-unit-small;
+    }
+    @include mq($from: tablet, $until: desktop){
+      padding: 0 $inuit-global-spacing-unit-large;
+    }
+    @include mq($from: desktop){
+      padding-left: $inuit-global-spacing-unit;
+      padding-right: $inuit-global-spacing-unit-large;
+    }
+  }
+  &--padding-left{
+    @include mq( $from: mobile, $until: tablet){
+      padding: 0 $inuit-global-spacing-unit-small;
+    }
+    @include mq($from: tablet, $until: desktop){
+      padding: 0 $inuit-global-spacing-unit-large;
+    }
+    @include mq($from: desktop){
+      padding-right: $inuit-global-spacing-unit;
+      padding-left: $inuit-global-spacing-unit-huge;
+    }
+  }
+  &--light-purple{
+    background-color: $color-purple-dark-20;
+  }
+  &__item{
+    width: 100%;
+    max-width: $inuit-wrapper-width;
+    margin: 0 auto;
+    @include mq($from: tablet, $until: desktop){
+      padding: 0 $inuit-global-spacing-unit-tiny;
+    }
+    @include mq($from: tablet, $until: desktop){
+      padding: 0 $inuit-global-spacing-unit-small;
+    }
+  }
+  &--max{
+    width: 100%;
+    max-width: $inuit-wrapper-width;
+  }
+}
+
+.o-content-wrapper{
+  &--margin-top{
+    @include mq( $from: mobile, $until: tablet){
+      margin-top: $inuit-global-spacing-unit-small;
+    }
+    @include mq($from: tablet, $until: desktop){
+      margin-top: $inuit-global-spacing-unit-large;
+    }
+    @include mq($from: desktop){
+      margin-top: $inuit-global-spacing-unit-huge;
+    }
+  }
+  &--margin-right{
+    @include mq( $from: mobile, $until: tablet){
+      margin-right: $inuit-global-spacing-unit-small;
+    }
+    @include mq($from: tablet, $until: desktop){
+      margin-right: $inuit-global-spacing-unit-large;
+    }
+    @include mq($from: desktop){
+      margin-right: $inuit-global-spacing-unit-huge;
+    }
+  }
+  &--margin-bottom{
+    @include mq( $from: mobile, $until: tablet){
+      margin-bottom: $inuit-global-spacing-unit-small;
+    }
+    @include mq($from: tablet, $until: desktop){
+      margin-bottom: $inuit-global-spacing-unit-large;
+    }
+    @include mq($from: desktop){
+      margin-bottom: $inuit-global-spacing-unit-huge;
+    }
+  }
+  &--margin-left{
+    @include mq( $from: mobile, $until: tablet){
+      margin-left: $inuit-global-spacing-unit-small;
+    }
+    @include mq($from: tablet, $until: desktop){
+      margin-left: $inuit-global-spacing-unit-large;
+    }
+    @include mq($from: desktop){
+      margin-left: $inuit-global-spacing-unit-huge;
+    }
+  }
+}
