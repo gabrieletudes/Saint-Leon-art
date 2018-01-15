@@ -32,16 +32,25 @@ $inuit-widths-breakpoint-separator: \@ !default;
 
 $inuit-responsive-spacing-directions: (
   "-bottom": "-bottom",
+  //added my own spacings
+  "-left": "-left",
+  "-top": "-top",
+  "-right": "-right"
 ) !default;
 
 $inuit-responsive-spacing-properties: (
   "margin": "margin",
-) !default;
+  "padding": "padding"
+  ) !default;
 
 $inuit-responsive-spacing-sizes: (
+  '-tiny': $inuit-global-spacing-unit-tiny,
+  '-small': $inuit-global-spacing-unit-small,
+  '-large': $inuit-global-spacing-unit-large,
+  '-huge': $inuit-global-spacing-unit-huge,
+  //till here added my own
   "-none": 0
 ) !default;
-
 
 
 /* stylelint-disable max-nesting-depth */
