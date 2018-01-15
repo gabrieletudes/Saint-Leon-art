@@ -8,7 +8,7 @@
             <span class="c-event-promo__date u-1/2@mobile">24 OCT 2017</span>
             <span class="c-event-promo__hour">21h30</span>
           </a>
-          <a href="#consult">CONSULTEZ LE PROGRAMME</a>
+          <a href="#consult" class="cta-button c-link c-link--forward c-link--upper u-margin-top">Consultez le programme</a>
         </div><!--END-expointro-->
         <div class="u-padding-vertical-large u-1/2@desktop">
           <img src="http://fillmurray.com/462/300" alt="The image next">
@@ -89,7 +89,7 @@
               </a>
             </article>
           </section>
-          <a href="#" class="cta-button cta-button--on-inversed u-padding-">Consultez le programme</a>
+          <a href="#" class="cta-button c-link c-link--forward c-link--upper u-margin-top-small">Consultez le programme</a>
         </div><!--END Events section-->
         <div class="section-wrapper o-wrapper o-flex o-wrapper--tiny o-flex--wrap u-1/1 u-1/3@desktop o-content-wrapper--padding-left u-padding-vertical-large c-bg-color--purple-light-05">
           <h3 class="u-1/1 c-h--white">Nos plus recent posts sur Instagram</h3>
