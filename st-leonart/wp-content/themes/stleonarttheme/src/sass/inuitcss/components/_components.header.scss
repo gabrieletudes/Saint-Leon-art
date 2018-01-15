@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   @include mq($from: desktop){
-    height: 100px;
+    height: rem(122px);
   }
   z-index: 2;
   top:0;
@@ -35,8 +35,8 @@
   }
   @include mq($until: desktop) {
     &__icon{
-      width: 40px;
-      height: 40px;
+      width: rem(40px);
+      max-height: rem(40px);
     }
     &__icon:after{
       font-size: 32px;
@@ -52,17 +52,17 @@
       content: '';
     }
     &__nav-item{
-      padding-left: 24px;
-      padding-top: 6px;
-      padding-bottom: 6px;
+      padding-left: rem(24px);
+      padding-top: rem(6px);
+      padding-bottom: rem(6px);
       flex: 0 0 100%;
       max-width: 100%;
     }
     &__nav-item:before {
-      margin-right: 2rem;
+      margin-right: rem(32px);
       color: rgba(255, 255, 255, 0.34);
       font-family: 'ionicons';
-      font-size: 1.5rem;
+      font-size: rem(24px);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -91,7 +91,7 @@
       position: absolute;
       background-color: $color-purple-light-20;
       color: white;
-      top: 3.44rem;
+      top: rem(55px);
       left: -66.66667%;
       bottom: 0;
       height: 100vh;
@@ -104,14 +104,14 @@
   }
   @include mq($from: desktop) {
     &__wrapper{
-      padding-bottom: 24px;
+      padding-bottom: rem(24px);
       background-color: $color-purple-light-20;
     }
     &__nav{
       background-color: $color-purple;
       position: absolute;
       align-items: center;
-      top: rem(40px);
+      top: rem(48px);
       left: 0;
       right: 0;
       bottom: 0;
@@ -127,17 +127,17 @@
   }
   &__back{
     background-color: #e08f89;
-    min-height: 312px;
-    margin-top: 54px;
+    min-height: rem(312px);
+    margin-top: rem(54px);
     background: linear-gradient(0deg,rgba($color-orange,0.6),rgba($color-orange,0.6)), url('#{$imgPath}home-bcg.jpg') center center;
     background-size: cover;
     transition: all .3s ease-in-out;
     @include mq($from: tablet, $until: desktop){
-      margin-top: 54px;
+      margin-top: rem(54px);
     }
     @include mq($from: desktop){
-      min-height: 400px;
-      margin-top: 65px;
+      min-height: rem(400px);
+      margin-top: rem(65px);
     }
   }
   &__title{
@@ -148,11 +148,11 @@
     color: $color-purple;
   }
   &__title--small {
-    font-size: 1rem;
+    font-size: rem(16px);
   }
 }
 
-.red{
+/*.red{
   background-color: #A32418;
   color: white;
 }
@@ -164,7 +164,7 @@
 
 .one{
   background-color: $color-purple;
-}
+}*/
 
 .mr-hidder {
   overflow: hidden;
