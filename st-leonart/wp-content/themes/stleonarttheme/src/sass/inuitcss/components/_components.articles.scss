@@ -1,0 +1,45 @@
+.c-article {
+  & img{
+    height: auto;
+    width: 100%;
+    margin-bottom: $inuit-global-spacing-unit-small;
+  }
+}
+
+.c-article{
+  max-width: rem(360px) !important;
+  &__date{
+    background-color: $color-orange;
+    color:$color-white;
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+  &__label{
+    background-color: $color-purple;
+    color:$color-white;
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+  &__element {
+      max-width: rem(96px);
+      flex: 0 0 50%;
+      width: 50%;
+      max-height: rem(96px);
+  }
+}
+
+.c-article-last{
+  &__data{
+    color: $color-black-light-46;
+  }
+  &__desc{
+    @include inuit-font-size(32px);
+  }
+}
+
+.c-article-type{
+  font-family: 'roboto-slab',serif;
+  color: $color-purple;
+  background-color: $color-white;
+  border: none;
+  border-radius: 0;
+
+}
