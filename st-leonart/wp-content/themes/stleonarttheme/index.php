@@ -1,20 +1,66 @@
-<?php include('partials/header.php')?>
-      <div class="o-content-wrapper o-content-wrapper--max o-flex o-flex--wrap">
-        <div class="c-expointro u-padding-vertical-large u-1/2@desktop">
-          <h2 class="u-my-420">EXPOSITION DE L’ARTISTE MUSSELMAN</h2>
-          <p class="u-my-420">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis unde omnis istpoe natus error sit voluptatem.</p>
-          <a class="c-event-promo o-flex o-flex--grids u-margin-top-small u-padding-small nana u-margin-left-none u-margin-bottom-small" href="#go">
-            <span class="c-event-promo__adress">36, Place Vivegnis 4000 Liège</span>
-            <span class="c-event-promo__date u-1/2@mobile">24 OCT 2017</span>
-            <span class="c-event-promo__hour">21h30</span>
-          </a>
-          <a href="#consult" class="cta-button c-link c-link--forward c-link--upper u-margin-top">Consultez le programme</a>
-        </div><!--END-expointro-->
-        <div class="u-padding-vertical-large u-1/2@desktop">
-          <img src="http://fillmurray.com/462/300" alt="The image next">
-        </div><!--END-image next-->
-      </div><!--END Content wrapper-->
-      <div class="o-content-wrapper c-bg-color--purple-light-20 o-flex o-flex--wrap u-padding-vertical-large c-bg-color--purple-light-40">
+<?php
+get_header();
+$today = date('Ymd');
+$argsevent = [
+    'posts_per_page' => 1,
+    'post_type' => 'events',
+    'meta_query' => [
+        [
+            'key' => 'event_date-starting',
+            'compare' => '>=',
+            'value' => $today,
+        ],
+        'relation' => 'OR',
+        [
+            'key' => 'event_date-ending',
+            'compare' => '>=',
+            'value' => $today,
+        ]
+    ]
+];
+// query
+$events = new WP_Query($argsevent);
+?>
+<?php if ($events): ?>
+    <div class="o-content-wrapper o-content-wrapper--max o-flex o-flex--wrap">
+        <?php while ($events->have_posts()) : $events->the_post(); ?>
+            <?php $locations = get_field('event_location'); ?>
+            <?php
+            $startdate = get_field('event_date-starting', false, false);
+            $starttime = get_field('event_time-starting', false, false);
+            $endingtime = get_field('event_time-ending', false, false);
+            $date = new DateTime($startdate);
+            $starttime = new DateTime($starttime);
+            $endingtime = new DateTime($endingtime);
+            ?>
+            <div class="c-expointro u-padding-vertical-large u-1/2@desktop">
+                <h2 class="u-my-420"><?= $post->post_title; ?></h2>
+                <p class="u-my-420"><?= get_field('event_description'); ?></p>
+                <?php if ($locations): ?>
+                    <?php foreach ($locations as $location): ?>
+                        <a class="c-event-promo o-flex o-flex--grids u-margin-top-small u-padding-small nana u-margin-left-none u-margin-bottom-small"
+                           href="<?= the_permalink(); ?>">
+                            <p class="c-event-promo__adress"><?= get_field('practical_address', $location->ID) ?></p>
+                            <time datetime="<?= $date->format('Y-m-j'); ?>"
+                                  class="c-event-promo__date u-1/2@mobile"><?= $date->format('j M Y'); ?></time>
+                            <span class="c-event-promo__hour">
+                    <time datetime="<?= $starttime->format('H:i'); ?>"><?= $starttime->format('H\hi'); ?></time> -
+                    <time datetime="<?= $endingtime->format('H:i'); ?>"><?= $endingtime->format('H\hi'); ?></time>
+                    </span>
+                        </a>
+                    <?php endforeach; endif; ?>
+                <a href="<?= the_permalink(); ?>"
+                   class="cta-button c-link c-link--forward c-link--upper u-margin-top"><?= __('Consulter l’événement', 'stla'); ?></a>
+            </div><!--END-expointro-->
+            <div class="u-padding-vertical-large u-1/2@desktop">
+                <img src="http://fillmurray.com/462/300" alt="The image next">
+            </div><!--END-image next-->
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    </div><!--END Content wrapper-->
+<?php endif; ?>
+<?php if ($artists): ?>
+    <div class="o-content-wrapper c-bg-color--purple-light-20 o-flex o-flex--wrap u-padding-vertical-large c-bg-color--purple-light-40">
         <div class="o-flex u-padding-vertical-large o-flex--wrap u-1/1 u-padding-horizontal c-bg-color--shadow-white">
           <h3 class="c-h--yellow o-flex u-1/1@mobile">Nos artistes vedette</h3>
           <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
