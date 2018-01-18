@@ -18,8 +18,14 @@ $argsevent = [
         ]
     ]
 ];
+$argsartists = [
+    'posts_per_page' => 5,
+    'post_type' => 'artists',
+];
+
 // query
 $events = new WP_Query($argsevent);
+$artists = new WP_Query($argsartists);
 ?>
 <?php if ($events): ?>
     <div class="o-content-wrapper o-content-wrapper--max o-flex o-flex--wrap">
@@ -62,27 +68,20 @@ $events = new WP_Query($argsevent);
 <?php if ($artists): ?>
     <div class="o-content-wrapper c-bg-color--purple-light-20 o-flex o-flex--wrap u-padding-vertical-large c-bg-color--purple-light-40">
         <div class="o-flex u-padding-vertical-large o-flex--wrap u-1/1 u-padding-horizontal c-bg-color--shadow-white">
-          <h3 class="c-h--yellow o-flex u-1/1@mobile">Nos artistes vedette</h3>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
-            <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
-            <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
-          </a>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
-            <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
-            <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
-          </a>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
-            <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
-            <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
-          </a>
-          <a href="#" class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="http://fillmurray.com/320/320" alt="there is not image yet">
-            <span class="c-artistcard__name o-flex">Chaineux Jocelyne</span>
-            <span class="c-artistcard__ability o-flex">Photographe, peintre figurative</span>
-          </a>
+            <h3 class="c-h--yellow o-flex u-1/1@mobile"><?= __('Nos artistes vedette', 'stla'); ?></h3>
+            <?php while ($artists->have_posts()) : $artists->the_post(); ?>
+                <?php $terms = get_field('artist_skills'); ?>
+                <a href="<?= the_permalink(); ?>"
+                   class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
+                    <img class="c-artistcard__image u-margin-bottom-small o-flex__item"
+                         src="http://fillmurray.com/320/320"
+                         alt="there is not image yet">
+                    <span class="c-artistcard__name o-flex"><?= $post->post_title; ?></span>
+                    <?php if ($terms): ?>
+                        <span class="c-artistcard__ability o-flex"><?= stla_the_skills($post->ID, ', '); ?></span>
+                    <?php endif; ?>
+                </a>
+            <?php endwhile; ?>
         </div><!--END-Artiste vedette-->
       </div><!--END Content wrapper-->
       <div class="o-content-wrapper--max o-flex o-flex--wrap o-flex--reversed">
