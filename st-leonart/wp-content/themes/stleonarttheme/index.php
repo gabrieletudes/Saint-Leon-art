@@ -158,67 +158,8 @@ $artists = new WP_Query($argsartists);
               <img src="http://fillmurray.com/90/90" alt="Image de instagrame">
             </a>
           </div>
-          <div class="u-1/1">
-            <h4 class="c-h--white">Suivez-nous sur</h4>
-            <div class="o-flex o-flex--wrap c-social-nav o-flex--centered">
-              <a class="c-social-nav__item u-1/4  o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--fab" aria-hidden="true">
-                </span><span class="u-hidden-visually">Facebook</span>
-              </a>
-              <a class="c-social-nav__item u-1/4 o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--twtr" aria-hidden="true">
-                </span><span class="u-hidden-visually">Twitter</span>
-              </a>
-              <a class="c-social-nav__item u-1/4 o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--inst" aria-hidden="true">
-                </span><span class="u-hidden-visually">Instagram</span>
-              </a>
-              <a class="c-social-nav__item u-1/4 o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--mail" aria-hidden="true">
-                </span><span class="u-hidden-visually">Mail</span>
-              </a>
-            </div>
-          </div>
-        </div><!--END Insta section-->
-      </div>
-      <div class="c-partner o-content-wrapper content-wrapper--light-purple o-flex o-flex--wrap u-padding-vertical-large c-bg-color--purple-light-15 o-flex--lock-left">
-        <h3 class="o-flex u-1/1 c-h--white">Liste de nos partenaires</h3>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right-small" href="#">
-          <img src="./assets/img/partners/arsenic.svg" alt="Logo de notre partenaire">
-      <!--<object type="image/svg+xml" data="./src/img/logos-partners.svg#vervinckt">
-          SVG n'est pas supporte sur votre navigateur, utilisez un navigateur plus rescent
-      </object>-->
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/calg.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/cpcr.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/lehangar.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/liege.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/naos.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/pac.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/province.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/ravi.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/st-leonard.svg" alt="Logo de notre partenaire">
-        </a>
-        <a class="c-partner__link u-padding-bottom-small u-padding-right" href="#">
-          <img src="./assets/img/partners/vervinckt.svg" alt="Logo de notre partenaire">
-        </a>
-      </div><!--END Partners section-->
-      <div class="site-cache" id="site-cache"></div>
-      <?php include('partials/footer.php')?>
+        </div>
+        <!--The Follow us content-->
+        <?php get_template_part('partials/content', 'followus'); ?>
+    </div><!--END Insta section-->
+</div>
