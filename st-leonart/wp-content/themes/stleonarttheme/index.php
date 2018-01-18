@@ -124,5 +124,7 @@ $artists = new WP_Query($argsartists);
         <?php get_template_part('partials/content', 'followus'); ?>
       </div><!--END Insta section-->
     </div>
+    <!--The partners list-->
+    <?php get_template_part('partials/content', 'partners'); ?>
     <div class="site-cache" id="site-cache"></div>
     <?php get_footer(); ?>
