@@ -3,12 +3,24 @@
 Template name: Page Evenements
 */
 get_header();
-
+$theeventtypes = get_terms('types', 'fields=names');
 $mycurrentpage = (get_query_var('paged', 1));
+//check if there is a event type argument, if it is not empty and if the the given value is in the event types array
+if($_GET['type'] && !empty($_GET['type'] && in_array($_GET['type'], $theeventtypes))){
+    $thetype = htmlspecialchars($_GET['type']);
+}else{
+    $thetype = $theeventtypes;
+}
 $args = [
     'posts_per_page' => 6,
     'post_type' => 'events',
-    //'paged' => $mycurrentpage
+    'tax_query' => [
+        [
+            'taxonomy' => 'types',
+            'field' => 'slug',
+            'terms' => $thetype
+        ]
+    ]
 ];
 // query
 $the_query = new WP_Query($args);
@@ -24,8 +36,7 @@ $the_query = new WP_Query($args);
                        class="c-nav-event__option c-nav-event__option--icon-down u-padding-small"><?=__('Ordre','stla');?></a>
                     <ul role="menu" tabindex="-1" aria-hidden="true" aria-label="submenu"
                         class="c-nav-event__drop-menu c-nav-event__drop-menu--left u-margin-none o-flex o-flex--wrap">
-                        <li role="menuitem" tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small"
-                                                                                  href="#"><?=__('Thematique','stla');?></a>
+                        <li role="menuitem" tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#"><?=__('Thematique','stla');?></a>
                         </li>
                         <li role="menuitem" tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small"
                                                                                   href="#"><?=__('Chronologique','stla');?></a>
@@ -38,18 +49,13 @@ $the_query = new WP_Query($args);
                             class="c-nav-event__option c-nav-event__option--icon-down u-padding-small"><?= __('type', 'stla'); ?></a>
                     <ul role="menu" aria-hidden="true" aria-label="submenu"
                         class="c-nav-event__drop-menu c-nav-event__drop-menu--right u-margin-none o-flex o-flex--wrap">
-                        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Expositions</a>
+                        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="<?= the_permalink();?>"><?=__('Tout','stla');?></a>
                         </li>
-                        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Concerts</a>
-                        </li>
-                        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Spectacles</a>
-                        </li>
-                        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Parcours
-                                Artistiques</a></li>
-                        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Concerts</a>
-                        </li>
-                        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Oeuvres
-                                Urbaines</a></li>
+                        <?php $eventtypes = get_terms('types');?>
+    <?php foreach($eventtypes as $eventtype): ?>
+        <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="<?= the_permalink().'?type='.$eventtype->name;?>"><?= $eventtype->name;?></a>
+        </li>
+        <?php endforeach;?>
                     </ul>
                 </li>
             </ul>
@@ -59,39 +65,28 @@ $the_query = new WP_Query($args);
                 <h2 class="u-my-420"><?= $post->post_title; ?></h2>
                 <p class="u-my-420"><?php nop_the_field('page_introduction'); ?></p>
             </div>
-            <div class="u-5/12@desktop">
-                <h2 class="u-my-420"><?= __('L’edition précédente', 'stla'); ?></h2>
-                <dl class="o-flex u-1/1@desktop u-7/12@wide u-margin-bottom-none">
-                    <div class="c-event-last o-flex o-flex--wrap-reverse u-1/3">
-                        <dt class="c-event-last__data o-flex o-flex--centered o-flex__item u-1/1">Participants</dt>
-                        <dd class="c-event-last__desc o-flex o-flex--centered o-flex__item u-1/1 u-margin-none">3000
-                        </dd>
-                    </div>
-                    <div class="c-event-last o-flex o-flex--wrap-reverse u-1/3">
-                        <dt class="c-event-last__data o-flex o-flex--centered o-flex__item u-1/1">Artistes</dt>
-                        <dd class="c-event-last__desc o-flex o-flex--centered o-flex__item u-1/1 u-margin-none">1000
-                        </dd>
-                    </div>
-                    <div class="c-event-last o-flex o-flex--wrap-reverse u-1/3">
-                        <dt class="c-event-last__data o-flex o-flex--centered o-flex__item u-1/1">Événements</dt>
-                        <dd class="c-event-last__desc o-flex o-flex--centered o-flex__item u-1/1 u-margin-none">300</dd>
-                    </div>
-                </dl>
-            </div>
+            <!--Previous event content-->
+            <?php get_template_part('partials/content','previous_edition');?>
             <p class="u-my-420"></p>
         </div><!--END-intro text-->
     </div>
     <div class="o-content-wrapper o-flex o-flex--wrap u-padding-bottom-large">
         <section class="o-flex o-flex--wrap">
             <div class="c-section__title-wrapper o-flex u-1/1">
-                <h3 class="c-h--purple o-flex o-flex--centered-v">Nos <span class="u-hidden-visually">Expositions</span>
+                <h3 class="c-h--purple o-flex o-flex--centered-v"><?=__('Nos','stla');?> <span class="u-hidden-visually"><?= isset($_GET['type']) ? $thetype.'s' : __('Événements','stla'); ?></span>
                 </h3>
-                <select class="c-h c-event-type u-margin-bottom">
-                    <option class="c-event-type__elmnt" value="expositions">Expositions</option>
-                    <option class="c-event-type__elmnt" value="concerts">Concerts</option>
-                    <option class="c-event-type__elmnt" value="spectacles">Spectacles</option>
-                    <option class="c-event-type__elmnt" value="parcours-artistiques">Parcours Artistiques</option>
+                <form action="">
+                <select class="c-h c-event-type u-margin-bottom" id="type" name="type"  onchange="this.form.submit();">
+                    <option class="c-event-type__elmnt" value=""><?= $_GET['type'] ? $thetype.'s' : __('Événements','stla'); ?></option>
+                    <?php foreach($eventtypes as $eventtype): ?>
+                        <?php if($eventtype->name != $_GET['type']):?>
+                    <option class="c-event-type__elmnt" value="<?=$eventtype->name;?>"><?=$eventtype->name;?></option>
+                        <?php else:?>
+                        <option class="c-event-type__elmnt" value=""><?= __('Tout','stla'); ?></option>
+                        <?php endif;?>
+                    <?php endforeach;?>
                 </select>
+                </form>
             </div>
             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                 <?php $term = get_field('article_type'); ?>
@@ -102,7 +97,7 @@ $the_query = new WP_Query($args);
                             <img src="http://fillmurray.com/90/90" alt="Image de l'evenemnt">
                         </div>
                         <div class="o-flex o-flex--wrap u-margin-right-small">
-                            <h4 class="o-flex__item u-margin-bottom-tiny">
+                            <h4 class="o-flex__item u-margin-bottom-tiny u-1/1">
                                 <?= $post->post_title; ?>
                             </h4>
                             <?php if ($locations): ?>
