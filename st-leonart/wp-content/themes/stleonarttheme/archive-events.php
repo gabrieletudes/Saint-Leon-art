@@ -73,11 +73,11 @@ $the_query = new WP_Query($args);
     <div class="o-content-wrapper o-flex o-flex--wrap u-padding-bottom-large">
         <section class="o-flex o-flex--wrap">
             <div class="c-section__title-wrapper o-flex u-1/1">
-                <h3 class="c-h--purple o-flex o-flex--centered-v"><?=__('Nos','stla');?> <span class="u-hidden-visually"><?= isset($_GET['type']) ? $thetype.'s' : __('Événements','stla'); ?></span>
+                <h3 class="c-h--purple o-flex o-flex--centered-v"><?=__('Nos','stla');?> <span class="u-hidden-visually"><?= isset($_GET['type']) ? lcfirst($thetype.'s') : __('événements','stla'); ?></span>
                 </h3>
                 <form action="">
                 <select class="c-h c-event-type u-margin-bottom" id="type" name="type"  onchange="this.form.submit();">
-                    <option class="c-event-type__elmnt" value=""><?= $_GET['type'] ? $thetype.'s' : __('Événements','stla'); ?></option>
+                    <option class="c-event-type__elmnt" value=""><?= $_GET['type'] ? lcfirst($thetype.'s'): __('événements','stla'); ?></option>
                     <?php foreach($eventtypes as $eventtype): ?>
                         <?php if($eventtype->name != $_GET['type']):?>
                     <option class="c-event-type__elmnt" value="<?=$eventtype->name;?>"><?=$eventtype->name;?></option>
