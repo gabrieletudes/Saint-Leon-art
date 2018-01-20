@@ -3,15 +3,26 @@
 Template name: Page Pratique
 */
 get_header();
-$mycurrentpage = (get_query_var('paged', 1));
+$thelocalities = get_terms('localities', 'fields=names');
+//check if there is a localite argument, if it is not empty and if the the given value is in the localities array
+if($_GET['localite'] && !empty($_GET['localite'] && in_array($_GET['localite'], $thelocalities))){
+    $thelocality = htmlspecialchars($_GET['localite']);
+}else{
+    $thelocality = $thelocalities;
+}
 $args = [
     'posts_per_page' => 6,
     'post_type' => 'practical',
-    //'paged' => $mycurrentpage
+    'tax_query' => [
+        [
+            'taxonomy' => 'localities',
+            'field' => 'slug',
+            'terms' => $thelocality
+        ]
+    ]
 ];
 // query
 $the_query = new WP_Query($args);
-//$total_pages = $the_query->max_num_pages;
 ?>
 <div class="o-content-wrapper o-content-wrapper--max o-flex o-flex--wrap u-padding-vertical-large c-bg-color--yellow">
     <div role="navigation" aria-label="menu pour les expositions" class="o-wrapper--small c-bg-color--purple u-1/1">
@@ -19,13 +30,15 @@ $the_query = new WP_Query($args);
             class="c-nav-event o-flex u-1/1 u-margin-vertical-small u-margin-horizontal-none o-flex--space-between o-flex--wrap o-flex--lock-right">
             <li role="menuitem" tabindex="0" class="o-flex__item c-nav-event__li"><?= __('organizer par', 'stla') ?><a
                         aria-haspopup="true"
-                        class="c-nav-event__option c-nav-event__option--icon-down u-padding-small"><?= __('lieu', 'stla'); ?></a>
+                        class="c-nav-event__option c-nav-event__option--icon-down u-padding-small"><?= __('localité', 'stla'); ?></a>
                 <ul role="menu" aria-hidden="true" aria-label="submenu"
                     class="c-nav-event__drop-menu c-nav-event__drop-menu--right u-margin-none o-flex o-flex--wrap">
-                    <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Liege</a></li>
-                    <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Outremeuse</a></li>
-                    <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Ans</a></li>
-                    <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="#">Mons</a></li>
+                    <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="<?= the_permalink();?>"><?=__('Tout','stla')?></a></li>
+                    <?php $localities = get_terms('localities');?>
+                    <?php if($localities):?>
+                        <?php foreach($localities as $locality): ?>
+                    <li tabindex="-1" class="o-flex u-1/1"><a class="u-1/1 u-padding-small" href="<?= the_permalink().'?localite='.$locality->name;?>"><?= $locality->name?></a></li>
+                    <?php endforeach; endif;?>
                 </ul>
             </li>
         </ul>
@@ -38,7 +51,7 @@ $the_query = new WP_Query($args);
     </div><!--END-intro text-->
     <section class="o-flex o-flex--wrap u-1/1">
         <div class="c-section__title-wrapper o-flex u-1/1">
-            <h3 class="c-h--purple o-flex o-flex--centered-v"><?= __('Les differents lieu', 'stla'); ?></h3>
+            <h3 class="c-h--purple o-flex o-flex--centered-v"><?= __('Les differents lieu','stla'), isset($_GET['localite']) ? ' à '.$thelocality :'';?></h3>
         </div>
         <?php if ($the_query->have_posts()): ?>
             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
