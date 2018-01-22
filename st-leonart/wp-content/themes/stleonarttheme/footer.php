@@ -1,8 +1,8 @@
 <div class="">
   <footer class="c-footer o-content-wrapper u-padding-vertical-large c-bg-color--purple">
-    <div class="o-flex o-flex--wrap">
+      <div class="o-flex o-flex--wrap">
         <div class="o-layout__item  u-1/1@mobile u-3/12@desktop o-flex o-flex--wrap u-padding-right-small o-flex__item u-margin-bottom">
-          <h4 class="u-hidden-visually c-h--white">Footer</h4>
+          <h3 class="u-hidden-visually c-h--white">Footer</h3>
           <a href="#" class="o-flex o-flex--lock-left u-margin-bottom"><img class="o-flex--lock-left" src="<?php theme_asset('/img/logo.svg')?>" alt="Logo" width="62" height="49"></a>
             <p>
             <?php stla_the_excerpt(135,stla_get_page_id('page-about.php'),'page_introduction')?>
