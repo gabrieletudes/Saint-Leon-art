@@ -13,3 +13,15 @@
     border: 1px solid $color-purple;
   }
 }
+//mailchimp
+.mc4wp-alert, .mc4wp-success{
+  & p{
+    color: $color-purple;
+  }
+}
+
+.mc4wp-form-fields{
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
