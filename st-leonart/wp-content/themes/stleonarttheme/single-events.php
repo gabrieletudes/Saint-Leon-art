@@ -77,7 +77,7 @@
               <span class="u-hidden-visually">Twitter</span>
             </a>
             <a class="c-social-nav__item u-padding-tiny u-margin-left" href="mailto:?subject=<?= $post->post_title;?>&amp;body=<?=the_permalink()?>" target="_self" aria-label="<?=__('Partager par E-Mail','stla');?>">
-              <span class="c-social-icon c-social-icon--mail" aria-hidden="true">
+                <span class="c-social-icon c-social-icon--mail" aria-hidden="true"></span>
                 <span class="u-hidden-visually">Mail</span>
               </a>
             </div>
