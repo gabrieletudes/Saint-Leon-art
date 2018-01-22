@@ -68,10 +68,10 @@ $the_query = new WP_Query($args);
             </div>
             <div class="o-flex o-flex--wrap">
               <div class="o-flex o-flex--lock-top">
-                <time datetime="" class="c-article__date u-margin-bottom-tiny u-padding-vertical-none"><?= $date->format('j M Y');?></time>
+                <time datetime="" class="c-article__date u-margin-bottom-tiny"><?= $date->format('j M Y');?></time>
                   <?php $articlecat = get_field('article_type');?>
                   <?php if($articlecat):?>
-                <p class="c-article__label u-margin-bottom-tiny u-padding-vertical-none"><?= $articlecat->name;?></p>
+                <p class="c-article__label u-margin-bottom-tiny"><?= $articlecat->name;?></p>
                   <?php endif;?>
               </div>
               <h4 class="o-flex__item u-margin-bottom-tiny u-11/12@tablet u-1/1"><a href="<?php the_permalink();?>"><?= $post->post_title;?></a></h4>
