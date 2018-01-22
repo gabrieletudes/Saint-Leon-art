@@ -21,6 +21,7 @@ $argsevent = [
 $argsartists = [
   'posts_per_page' => 5,
   'post_type' => 'artists',
+    'orderby' => 'rand'
 ];
 
 // query
@@ -41,7 +42,7 @@ $artists = new WP_Query($argsartists);
       ?>
       <div class="c-expointro u-padding-vertical-large u-1/2@desktop">
         <h2 class="u-my-420"><?= $post->post_title; ?></h2>
-        <p class="u-my-420"><?= get_field('event_description'); ?></p>
+        <p class="u-my-420"><?php stla_the_excerpt(300,$post->ID,'event_description')?></p>
         <?php if ($locations): ?>
           <?php foreach ($locations as $location): ?>
             <a class="c-event-promo o-flex o-flex--grids u-margin-top-small u-padding-small nana u-margin-left-none u-margin-bottom-small"
@@ -66,7 +67,17 @@ $artists = new WP_Query($argsartists);
             class="cta-button c-link c-link--forward c-link--upper u-margin-top"><?= __('Consulter l’événement', 'stla'); ?></a>
           </div><!--END-expointro-->
           <div class="u-padding-vertical-large u-1/2@desktop">
-            <img src="http://fillmurray.com/462/300" alt="The image next">
+            <!--<img src="<?php //the_post_thumbnail($location->ID);?>" alt="" width="462" height="300">-->
+            <!--<img src="http://fillmurray.com/462/300" alt="The image next">-->
+            <?php $locationimage = get_field('practical_image', $location->ID);
+            $thumb = $locationimage['sizes']['location-medium'];
+            $alt = $locationimage['alt'];
+            ?>
+            <?php if($locationimage):?>
+                <img src="<?= $thumb ?>" alt="<?= $alt;?>" width="462" height="300">
+            <?php else:?>
+                <img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red|label:L|<?= get_field('practical_address', $location->ID) ?>&zoom=15&size=462x300&scale=2&key=AIzaSyDQT630KW4SabyiAeZWxylHlbPpmO9CEWU" alt="<?= __('Carte sur google maps de ','stla').$post->post_title;?>" width="462" height="300">
+            <?php endif;?>
           </div><!--END-image next-->
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
@@ -80,9 +91,19 @@ $artists = new WP_Query($argsartists);
             <?php $terms = get_field('artist_skills'); ?>
             <a href="<?= the_permalink(); ?>"
               class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
+                <?php $artistimage = get_field('artist_picture');
+                $thumb = $artistimage['sizes']['artist-medium'];
+                $alt = $artistimage['alt'];
+                ?>
+                <?php if($artistimage):?>
               <img class="c-artistcard__image u-margin-bottom-small o-flex__item"
-              src="http://fillmurray.com/320/320"
-              alt="there is not image yet">
+              src="<?= $thumb;?>"
+              alt="<?= $alt;?>" width="320" height="320">
+                <?php else:?>
+                    <img class="c-artistcard__image u-margin-bottom-small o-flex__item"
+                         src="http://fillmurray.com/320/320"
+                         alt="there is not image yet" width="320" height="320">
+                <?php endif; ?>
               <span class="c-artistcard__name o-flex">
                 <?= $post->post_title; ?>
               </span>
