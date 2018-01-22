@@ -59,8 +59,6 @@ $the_query = new WP_Query($args);
                     <a href="<?php the_permalink();?>" class="c-bg-color--shadow-white c-anime--hover-up">
                         <div class="c-practical__element u-margin-none">
                             <img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red|label:L|<?= get_field('practical_address') ?>&zoom=15&size=352x144&scale=2&key=AIzaSyDQT630KW4SabyiAeZWxylHlbPpmO9CEWU" alt="<?= __('Carte de sur google maps la carte de ','stla').$post->post_title;?>" width="352" height="144">
-                            <!--<img src="http://fillmurray.com/352/144" alt="Image de l'article">-->
-
                             <div class="o-flex o-flex--wrap u-margin-left-small u-margin-bottom-small">
                                 <h4 class="u-margin-bottom-tiny u-1/1 c-practical__sub-title"><?= $post->post_title;?></h4>
                                 <p class="u-margin-bottom-none"><?= get_field('practical_address')?></p>
