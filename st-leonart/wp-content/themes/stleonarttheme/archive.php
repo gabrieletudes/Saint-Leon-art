@@ -68,7 +68,7 @@ $the_query = new WP_Query($args);
             </div>
             <div class="o-flex o-flex--wrap">
               <div class="o-flex o-flex--lock-top">
-                <time datetime="" class="c-article__date u-margin-bottom-tiny"><?= $date->format('j M Y');?></time>
+                <time datetime="<?= $date->format('Y-m-j');?>" class="c-article__date u-margin-bottom-tiny"><?= $date->format('j M Y');?></time>
                   <?php $articlecat = get_field('article_type');?>
                   <?php if($articlecat):?>
                 <p class="c-article__label u-margin-bottom-tiny"><?= $articlecat->name;?></p>
