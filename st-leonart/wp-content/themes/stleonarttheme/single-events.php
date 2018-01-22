@@ -11,6 +11,15 @@
       <time datetime="<?= get_field('event_time-starting'); ?>"><?= get_field('event_time-starting'); ?></time>
       -
       <time datetime="<?= get_field('event_time-ending'); ?>"><?= get_field('event_time-ending'); ?></time>
+        <span class="u-hidden-visually"><?= __('Date de l’événement', 'stla'); ?></span>
+        <?php
+        $startingdate = get_field('event_date-starting',false,false);
+        $endingdate = get_field('event_date-ending', false, false);
+        $starting = new DateTime($startingdate);
+        $ending = new DateTime($endingdate);
+        ?>
+        <time class="u-margin-left" datetime="<?= $starting->format('Y-m-j'); ?>"><?= $starting->format('j M'); ?></time>
+        <time datetime="<?= $ending->format('Y-m-j'); ?>"><?= '&nbsp;au&nbsp;'.$ending->format('j M Y'); ?></time>
     </p>
     <?php $locations = get_field('event_location'); ?>
     <?php if ($locations): ?>
