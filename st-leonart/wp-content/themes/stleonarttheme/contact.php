@@ -1,12 +1,23 @@
-<?php include('partials/header.php')?>
+<?php
+/*
+Template name: Page Contact
+*/
+get_header();
+?>
 <div class="o-content-wrapper o-content-wrapper--max o-flex o-flex--wrap u-padding-bottom u-padding-top-large">
   <div class="o-flex u-1/1 c-bg-color--shadow-white o-flex--wrap">
     <div class="o-layout__item  u-1/1@mobile u-1/2@tablet u-1/2@desktop u-padding-vertical u-padding-horizontal o-flex__item c-bg-color--purple">
-      <h4 class="u-margin-bottom-small c-h--white">Nos informations de contact</h4>
+      <h4 class="u-margin-bottom-small c-h--white"><?=__('Nos informations de contact','stla');?></h4>
       <ul class="o-list-bare">
-        <li>36, Place Vivegnis 4000 Liège</li>
-        <li><a href="tel:+32493121421">+32 493 121 421</a></li>
-        <li><a href="mailto:musselman@gmail.com">musselman@gmail.com</a></li>
+        <li><?= get_field('contact_address')?></li>
+          <?php $number = get_field('contact_phone')?>
+          <?php if ($number):?>
+        <li><a class="c-link--yellow c-link--underlined" href="<?= 'tel:' . str_replace(' ', '', $number) ?>"><?= $number?></a></li>
+       <?php endif;?>
+          <?php $email = get_field('contact_email');?>
+          <?php if ($email):?>
+        <li><a class="c-link--yellow c-link--underlined" href="<?= 'mailto:' . $email ?>"><?= $email?></a></li>
+          <?php endif;?>
       </ul>
       <div class="u-1/1">
         <h4 class="c-h--white">Suivez-nous sur</h4>
