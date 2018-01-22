@@ -77,7 +77,7 @@ $the_query = new WP_Query($args);
       <h3 class="c-h--purple o-flex o-flex--centered-v"><?= __('Nos', 'stla'); ?> <span
         class="u-hidden-visually"><?= isset($_GET['type']) ? lcfirst($thetype . 's') : __('événements', 'stla'); ?></span>
       </h3>
-      <form action="">
+      <form action="#">
         <select class="c-h c-event-type u-margin-bottom" id="type" name="type" onchange="this.form.submit();">
           <option class="c-event-type__elmnt"
           value=""><?= $_GET['type'] ? lcfirst($thetype . 's') : __('événements', 'stla'); ?></option>
