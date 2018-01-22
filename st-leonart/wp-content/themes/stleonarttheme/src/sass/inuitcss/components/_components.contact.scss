@@ -1,94 +1,37 @@
-.c-contact__form .c-contact__main .c-contact__group {
-  position: relative
-}
-.c-contact__main .c-contact__group--error .c-contact__label,
-{
-  color:$color-orange !important;
-}
-.c-contact__main .c-contact__group--error .c-contact__bar,.c-contact__group--error .c-contact__bar:after,.c-contact__group--error .c-contact__bar:before
-{
-  background-color:$color-orange !important;
-}
-
-.c-contact__form .c-contact__main .c-contact__group .c-contact__input {
-  color: #333;
-  font-family: "firasans", sans-serif;
-  width: 100%;
-  font-size: 16px;
-  display: block;
-  border: none;
-  border-bottom: rem(1px solid #d0dce7);
-  opacity: 0;
-}
-.c-contact__form .c-contact__main .c-contact__group .c-contact__input:focus,
-.c-contact__form .c-contact__main .c-contact__group .c-contact__textarea:focus {
-  outline: none;
-  opacity: 1;
-  border-bottom: none;
-}
-.c-contact__main .c-contact__group .c-contact__input:focus ~ label,
-.c-contact__main .c-contact__group .c-contact__input:valid ~ label {
-  top: rem(-20px);
-  font-size: rem(12px);
-  margin-top: $inuit-global-spacing-unit-small;
-}
-.c-contact__form .c-contact__main .c-contact__group .c-contact__textarea:focus ~ label,
-.c-contact__form .c-contact__main .c-contact__group .c-contact__textarea:valid ~ label{
-  top: rem(-20px);
-  font-size: rem(12px);
-  margin-top: $inuit-global-spacing-unit-small;
+.wpcf7-form-control-wrap{
+    & .c-contact__input {
+    border: none;
+    border-bottom: 2px solid #d0dce7;
+    width: 100%;
+    transition: .2s ease all;
+    &.wpcf7-not-valid{
+      border-color: $color-orange;
+      margin-bottom: $inuit-global-spacing-unit-tiny;
+    }
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+        border-bottom: 2px solid $color-purple;
+    }
+    }
+    //for error label
+    & .wpcf7-not-valid-tip{
+      font-size: 14px;
+      color: $color-orange;
+    }
+    .c-contact__tetarea{
+      resize: none;
+    }
 }
 
-.c-contact__form .c-contact__main .c-contact__group .c-contact__label {
-  color: #333;
-  font-family: "firasans", sans-serif;
-  font-size: rem(16px);
-  font-weight: 400;
-  position: absolute;
-  pointer-events: none;
-  top: 10px;
-  transition: .2s ease all;
+.c-contact__label {
+    font-size: 14px;
 }
-
-.c-contact__textarea{
-  max-height: rem(40px);
-  display: block;
-  border: none;
-  transition: .2s ease all;
-  width: 100%;
-  resize: none;
-  opacity: 0;
-  &:focus{
-    max-height: rem(60px);
-    opacity: 1;
-  }
+//Hidde for screen readers
+.screen-reader-response{
+  @include inuit-hidden-visually();
 }
-
-.c-contact__bar {
-  position: relative;
-  display: block;
-  border-bottom: 1px solid $color-black-light-46;
-}
-.c-contact__bar:before,
-.c-contact__bar:after {
-  content: '';
-  height: rem(2px);
-  width: 0;
-  position: absolute;
-  background: $color-purple;
-  transition: .2s ease all;
-}
-.c-contact__bar:before {
-  left: 50%
-}
-.c-contact__bar:after {
-  right: 50%
-}
-.c-contact__error{
-  font-size: rem(12px);
-  color:$color-orange;
-}
-input:focus ~ .c-contact__bar:before,
-input:focus ~ .c-contact__bar:after {
-  width: 50%
+.wpcf7-response-output{
+  margin-top: $inuit-global-spacing-unit-tiny;
 }
