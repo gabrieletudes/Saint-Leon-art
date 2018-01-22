@@ -52,7 +52,7 @@
   </div>
 </div><!--END Site Pusher-->
 </div><!--END Hidder-->
-<script type="text/javascript" src="<?php theme_asset('/js/jquery-2.2.1.min.js');?>"></script>
-<script type="text/javascript" src="<?php theme_asset('/js/script.js');?>"></script>
+<script src="<?php theme_asset('/js/jquery-2.2.1.min.js');?>"></script>
+<script src="<?php theme_asset('/js/script.js');?>"></script>
 </body>
 </html>
