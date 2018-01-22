@@ -3,63 +3,51 @@
     <div class="o-flex o-flex--wrap">
         <div class="o-layout__item  u-1/1@mobile u-3/12@desktop o-flex o-flex--wrap u-padding-right-small o-flex__item u-margin-bottom">
           <h4 class="u-hidden-visually c-h--white">Footer</h4>
-          <a href="#" class="o-flex o-flex--lock-left u-margin-bottom"><img class="o-flex--lock-left" src="assets/img/logo.svg" alt="Logo" width="62" height="49"></a>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis unde omnis istpoe natus error sit voluptatem.</p>
-          <div class="u-1/1">
-            <h4 class="c-h--white"><?= __('Suivez-nous sur','stla')?></h4>
-            <div class="o-flex o-flex--wrap c-social-nav o-flex--centered">
-              <a class="c-social-nav__item u-1/4  o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--fab" aria-hidden="true">
-                </span><span class="u-hidden-visually">Facebook</span>
-              </span></a>
-              <a class="c-social-nav__item u-1/4 o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--twtr" aria-hidden="true">
-                </span><span class="u-hidden-visually">Twitter</span>
-              </span></a>
-              <a class="c-social-nav__item u-1/4 o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--inst" aria-hidden="true">
-                </span><span class="u-hidden-visually">Instagram</span>
-              </span></a>
-              <a class="c-social-nav__item u-1/4 o-flex__item" href="#">
-                <span class="icon-fallback-text"><span class="c-social-icon c-social-icon--mail" aria-hidden="true">
-                </span><span class="u-hidden-visually">Mail</span>
-              </span></a>
-            </div>
-        </div>
+          <a href="#" class="o-flex o-flex--lock-left u-margin-bottom"><img class="o-flex--lock-left" src="<?php theme_asset('/img/logo.svg')?>" alt="Logo" width="62" height="49"></a>
+            <p>
+            <?php stla_the_excerpt(135,stla_get_page_id('page-about.php'),'page_introduction')?>
+            </p>
+            <!--Follow us-->
+            <?php get_template_part('partials/content', 'followus'); ?>
       </div>
         <div class="o-layout__item  u-1/1@mobile u-4/12@tablet u-2/12@desktop u-padding-right-small o-flex__item">
           <h4 class="u-margin-bottom-small c-h--white"><?=__('Menu','stla')?></h4>
           <ul class="o-list-bare">
-            <li><a href="#0">Accueil</a></li>
-            <li><a href="#4">Programme</a></li>
-            <li><a href="#1">Saint Leon'art</a></li>
-            <li><a href="#0">Artistes</a></li>
-            <li><a href="#9">Articles</a></li>
-            <li><a href="#9">Pratique</a></li>
-            <li><a href="#9">Contact</a></li>
+              <?php foreach (stla_get_nav_items('header') as $item): ?>
+            <li><a class="c-link--yellow c-link--underlined" href="<?= $item->url?>"><?= $item->label;?></a></li>
+              <?php endforeach;?>
           </ul>
         </div>
         <div class="o-layout__item  u-1/1@mobile u-6/12@tablet u-3/12@desktop u-padding-right-small o-flex__item">
           <h4 class="u-margin-bottom-small c-h--white"><?=__('Contactez-nous','stla');?></h4>
           <ul class="o-list-bare">
-            <li>36, Place Vivegnis 4000 Liège</li>
-            <li><a href="tel:+32493121421">+32 493 121 421</a></li>
-            <li><a href="mailto:musselman@gmail.com">musselman@gmail.com</a></li>
+            <li><?= get_field('contact_address', stla_get_page_id('contact.php'))?></li>
+              <?php $number = get_field('contact_phone',stla_get_page_id('contact.php'))?>
+              <?php if ($number):?>
+            <li><a class="c-link--yellow c-link--underlined" href="<?= 'tel:' . str_replace(' ', '', $number) ?>"><?= $number?></a></li>
+              <?php endif;?>
+              <?php $email = get_field('contact_email',stla_get_page_id('contact.php'));?>
+              <?php if ($email):?>
+            <li><a class="c-link--yellow c-link--underlined" href="<?= 'mailto:' . $email ?>"><?= $email?></a></li>
+              <?php endif;?>
           </ul>
         </div>
         <div class="c-newsletter o-layout__item  u-1/1@mobile u-3/4@tablet u-4/12@desktop c-bg-color--shadow-white u-padding u-padding-bottom-large o-flex o-flex--wrap">
           <h4 class="c-h--purple"><?= __('NEWSLETTER','stla');?></h4>
-          <p class="c-h--purple u-1/1">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. </p>
-        <form action="" class="c-newsletter-form o-flex o-flex--wrap">
+          <p class="c-h--purple u-1/1"><?= __('Abonnez-vous à notre newsletter pour rester informé de nos derniers événements');?></p>
+        <!--<form action="" class="c-newsletter-form o-flex o-flex--wrap">
           <input class="c-newsletter-form__input u-padding-small" type="text" name="" placeholder="marco.polo@email.com" value="">
           <button class="o-flex o-flex--centered-v c-btn c-btn--submit c-btn--small c-btn--primary" type="submit" name=""><?=__('Souscrir','stla');?></button>
-        </form>
+        </form>-->
+            <div class="c-newsletter-form o-flex o-flex--wrap">
+            <?= do_shortcode('[mc4wp_form id="220"]')?>
+            </div>
         </div>
       </div>
     </footer>
-    <p class="o-content-wrapper u-padding-vertical-small u-margin-bottom-none c-bg-color--purple-light-10 o-flex o-flex--wrap o-flex--centered">
+    <p class=" u-hidden-visuallyo-content-wrapper u-padding-vertical-small u-margin-bottom-none c-bg-color--purple-light-10 o-flex o-flex--wrap o-flex--centered">
       <small class="o-flex__item u-margin-right u-margin-right@mobile-none"><?= __('Copyright © 2017 Saint Leon’art. Tous droits réservés.','stla');?></small>
-      <small class="o-flex__item"><?=__('Crafted with ','stla');?><span class="c-footer__icon--heart"><?=__('love','stla');?></span><?= __(' by ','stla');?><a class="c-footer__maker-link" href="http://martinz.be">MARTINZ</a></small>
+      <small class="o-flex__item"><?=__('Crafted with ','stla');?><span class="c-footer__icon--heart"><?=__('love','stla');?></span><?= __(' by ','stla');?><a class="c-footer__maker-link c-link--underlined" href="http://martinz.be">MARTINZ</a></small>
     </p>
   </div>
 </div><!--END Site Pusher-->
