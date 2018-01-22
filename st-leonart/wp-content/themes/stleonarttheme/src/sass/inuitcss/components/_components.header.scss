@@ -129,8 +129,6 @@
     background-color: #e08f89;
     min-height: rem(312px);
     margin-top: rem(54px);
-    background: linear-gradient(0deg,rgba($color-orange,0.6),rgba($color-orange,0.6)), url('#{$imgPath}home-bcg.jpg') center center;
-    background-size: cover;
     transition: all .3s ease-in-out;
     @include mq($from: tablet, $until: desktop){
       margin-top: rem(54px);
