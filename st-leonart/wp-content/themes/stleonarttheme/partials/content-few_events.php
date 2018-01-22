@@ -56,7 +56,7 @@ $events = new WP_Query($args);
   <?php wp_reset_postdata(); ?>
 </section>
 <div class="o-flex u-margin-top-small">
-  <a href="<?= stla_get_page_url('archive-events.php'); ?>"
-    class="cta-button c-link c-link--forward c-link--upper"><?= __('Consulter les autres événements','stla');?></a>
+  <a  href="<?= stla_get_page_url('archive-events.php'); ?>"
+    class="cta-button c-link c-link--forward c-link--upper" title="<?= __('Consulter les autres événements','stla');?>"><?= __('Consulter les autres événements','stla');?></a>
   </div>
 <?php endif; ?>
