@@ -40,7 +40,7 @@
             <?php endif;?>
         </div>
         <nav class="c-header__nav titi o-flex o-flex__item u-2/3@mobile u-4/12@tablet u-11/12@desktop o-flex--lock-top-left o-flex--wrap">
-            <h2 class="u-hidden-visually" ><?= __('Main navigation','stla');?></h2>
+            <h1 class="u-hidden-visually" ><?= __('Main navigation','stla');?></h1>
             <a href="#" class="o-block o-flex c-header__nav-logo u-margin-right-small"><img class="u-padding-tiny" src="<?php theme_asset('/img/logo.svg');?>" alt="Logo" width="62" height="49"></a>
             <?php foreach (stla_get_nav_items('header') as $item): ?>
                 <a href="<?= $item->url;?>" class="c-header__nav-item c-header__nav-item--<?= $item->icon;?> o-flex__item u-margin-right" data-hover="<?= $item->label;?>"><?= $item->label;?></a>
