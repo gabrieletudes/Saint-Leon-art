@@ -43,9 +43,17 @@
         <?php foreach ($artists as $artist): ?>
           <a href="<?= get_permalink($artist->ID); ?>"
             class="c-artistcard u-padding-right-small u-margin-bottom-small u-1/2@mobile u-1/4@tablet u-1/4@desktop u-2/12@wide">
-            <img class="c-artistcard__image u-margin-bottom-small o-flex__item"
+              <?php $artistimage = get_field('artist_picture',$artist->ID);
+              $thumb = $artistimage['sizes']['artist-medium'];
+              $alt = $artistimage['alt'];
+              ?>
+              <?php if($artistimage):?>
+                  <img class="c-artistcard__image u-margin-bottom-small o-flex__item" src="<?=$thumb?>" alt="<?=$alt?>">
+                  <?php else:?>
+              <img class="c-artistcard__image u-margin-bottom-small o-flex__item"
             src="http://fillmurray.com/320/320"
-            alt="there is not image yet">
+            alt="<?=__('Photo de l’acteur Bill Murray','stla');?>" width="320" height="320">
+              <?php endif;?>
             <span class="c-artistcard__name o-flex"><?= $artist->post_title; ?></span>
             <span class="c-artistcard__ability o-flex"><?= stla_the_skills($artist->ID, ', '); ?></span>
           </a>
