@@ -43,9 +43,9 @@ $events = new WP_Query($args);
             <h4 class="o-flex__item u-margin-bottom-tiny"><?= $post->post_title; ?></h4>
             <?php if ($locations): ?>
               <?php foreach ($locations as $location): ?>
-                <address class="o-flex__item u-margin-bottom-tiny">
+                <p class="o-flex__item u-margin-bottom-tiny">
                   <?= get_field('practical_address', $location->ID) ?>
-                </address>
+                </p>
               <?php endforeach; ?>
             <?php endif; ?>
           </div>
