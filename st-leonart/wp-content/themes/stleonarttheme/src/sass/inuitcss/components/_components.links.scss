@@ -42,7 +42,7 @@
 }
 
 //styles
-.c-link--yellow {
+.c-link--yellow{
   color: $color-yellow;
 
   &:hover,
@@ -50,6 +50,10 @@
   &:focus {
     color: $color-yellow-dark-10;
   }
+}
+
+.c-link--underlined{
+  text-decoration: underline;
 }
 
 .c-link--purple {
